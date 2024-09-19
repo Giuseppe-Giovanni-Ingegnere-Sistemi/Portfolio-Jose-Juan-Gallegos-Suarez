@@ -6,6 +6,32 @@ app, rt = fast_app()
 css = '''
     /* ... (estilos anteriores sin cambios) ... */
 
+    .container {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .terminal {
+        border: 2px solid #00ff00;
+        padding: 30px;
+        margin: 40px auto;
+        max-width: 800px;
+        text-align: center;
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+        animation: neon-pulse 1.5s ease-in-out infinite alternate;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .section {
+        font-size: 1.5em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    /* ... (resto de los estilos sin cambios) ... */
+    /* ... (estilos anteriores sin cambios) ... */
+
     .terminal {
         border: 2px solid #00ff00;
         padding: 20px;
@@ -259,68 +285,57 @@ def get():
         ),
         Body(
             Div(
-              
-Div(
-    H2("Sobre mí", _class="section", style="text-align: left; margin-bottom: 20px;"),
-    Div(
-        Div(
-            Img(src="https://avatars.githubusercontent.com/u/162421825?v=4", alt="Mi foto", style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;"),
-            style="flex: 0 0 auto; margin-right: 20px;"
-        ),
-        Div(
-            H3('José Juan Gallegos Suarez', _class="header glitch"),
-            P("Desarrollador Full-Stack", style="margin-top: 0; font-style: italic;"),
-            P("Ingeniero en Sistemas Computacionales con pasión por la tecnología y la innovación."),
-            P("Especializado en desarrollo de software, mantenimiento de equipos, y soluciones tecnológicas."),
-            style="flex: 1; text-align: justify;"
-        ),
-        style="display: flex; align-items: center;"
-    ),
-    _class="terminal",
-    style="border-radius: 15px; overflow: hidden; padding: 20px;"
-),
-Div(
-    Input(
-        type="text",
-        value="ing.josejuangallegos@gmail.com",
-        readonly=True,
-        style="background-color: #001100; color: #00ff00; border: 1px solid #00ff00; padding: 10px; border-radius: 5px; margin-right: 10px;"
-    ),
-    Button(
-        "Enviar correo",
-        onclick="sendEmail()",
-        style="margin-right: 10px; padding: 10px 20px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
-    ),
-    Button(
-        "Copiar correo",
-        onclick="copyEmail()",
-        style="margin-right: 10px; padding: 10px 20px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
-    ),
-    A(
-        "Descargar CV", 
-        href="https://drive.google.com/file/d/1PA1w04EWNXn1GJahCaWf13pZPhgdlNwj/view?usp=drive_link", 
-        download="CV_JoseJuanGallegosSuarez.pdf", 
-        _class="download-cv-btn",
-        style="padding: 10px 20px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; text-decoration: none; transition: all 0.3s ease;"
-    ),
-    style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"
-),
-Script('''
-function copyEmail() {
-    var emailInput = document.querySelector('input[type="text"]');
-    emailInput.select();
-    document.execCommand('copy');
-    alert('Correo electrónico copiado al portapapeles');
-}
-
-function sendEmail() {
-    var email = 'ing.josejuangallegos@gmail.com';
-    var subject = 'Contacto desde tu sitio web';
-    var emailBody = 'Hola José Juan,';
-    document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
-}
-'''),
-                                Div(
+                Div(
+                    H2("Sobre mí", _class="section", style="text-align: left; margin-bottom: 20px;"),
+                    Div(
+                        Div(
+                            Img(src="https://avatars.githubusercontent.com/u/162421825?v=4", alt="Mi foto", style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;"),
+                            style="flex: 0 0 auto; margin-right: 20px;"
+                        ),
+                        Div(
+                            H3('José Juan Gallegos Suarez', _class="header glitch"),
+                            P("Desarrollador Full-Stack", style="margin-top: 0; font-style: italic;"),
+                            P("Ingeniero en Sistemas Computacionales con pasión por la tecnología y la innovación."),
+                            P("Especializado en desarrollo de software, mantenimiento de equipos, y soluciones tecnológicas."),
+                            style="flex: 1; text-align: justify;"
+                        ),
+                        style="display: flex; align-items: center;"
+                    ),
+                    _class="terminal",
+                    style="border-radius: 15px; overflow: hidden; padding: 20px; margin-bottom: 60px;"
+                ),
+                Div(
+                    Div(
+                        I(_class="fas fa-envelope", style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #00ff00;"),
+                        Input(
+                            type="text",
+                            value="ing.josejuangallegos@gmail.com",
+                            readonly=True,
+                            style="background-color: #001100; color: #00ff00; border: 1px solid #00ff00; padding: 10px 10px 10px 35px; border-radius: 5px; width: 300px; box-sizing: border-box;"
+                        ),
+                        style="position: relative; display: inline-block; margin-right: 10px;"
+                    ),
+                    Button(
+                        I(_class="fas fa-envelope", style="font-size: 18px;"),
+                        onclick="sendEmail()",
+                        style="margin-right: 10px; padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
+                    ),
+                    Button(
+                        I(_class="fas fa-copy", style="font-size: 18px;"),
+                        onclick="copyEmail()",
+                        style="margin-right: 10px; padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
+                    ),
+                    A(
+                        I(_class="fas fa-download", style="font-size: 18px;"),
+                        href="https://drive.google.com/file/d/1PA1w04EWNXn1GJahCaWf13pZPhgdlNwj/view?usp=drive_link", 
+                        download="CV_JoseJuanGallegosSuarez.pdf", 
+                        _class="download-cv-btn",
+                        style="padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; text-decoration: none; transition: all 0.3s ease;"
+                    ),
+                    style="display: flex; align-items: center; justify-content: center; margin: 60px 0;",
+                    _class="terminal",
+                ),
+                Div(
                     H2("Skills", _class="section"),
                     Ul(
                         Li("Python", _class="skill-item"),
@@ -343,7 +358,7 @@ function sendEmail() {
                         _class="skills-list"
                     ),
                     _class="skills terminal",
-                    style="border-radius: 15px; overflow: hidden; padding: 20px;"
+                    style="border-radius: 15px; overflow: hidden; padding: 20px; margin-bottom: 60px;"
                 ),
                 Div(
                     H2("Projects", _class="section"),
@@ -393,7 +408,7 @@ function sendEmail() {
                         _class="projects-list"
                     ),
                     _class="projects terminal",
-                    style="border-radius: 15px; overflow: hidden; padding: 20px;"
+                    style="border-radius: 15px; overflow: hidden; padding: 20px; margin-bottom: 60px;"
                 ),
                 Div(
                     H2("Contact", _class="section"),
@@ -409,7 +424,7 @@ function sendEmail() {
                         _class="social-icons"
                     ),
                     _class="contact terminal",
-                    style="border-radius: 15px; overflow: hidden; padding: 20px;"
+                    style="border-radius: 15px; overflow: hidden; padding: 20px; margin-bottom: 60px;"
                 ),
                 _class="container"
             )
