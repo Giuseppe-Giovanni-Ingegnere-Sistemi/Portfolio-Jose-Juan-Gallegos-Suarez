@@ -292,11 +292,19 @@ def get():
                             Img(src="https://avatars.githubusercontent.com/u/162421825?v=4", alt="Mi foto", style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;"),
                             style="flex: 0 0 auto; margin-right: 20px;"
                         ),
-                        Div(
+                                                Div(
                             H3('José Juan Gallegos Suarez', _class="header glitch"),
                             P("Desarrollador Full-Stack", style="margin-top: 0; font-style: italic;"),
                             P("Ingeniero en Sistemas Computacionales con pasión por la tecnología y la innovación."),
                             P("Especializado en desarrollo de software, mantenimiento de equipos, y soluciones tecnológicas."),
+                            A(
+                                I(_class="fas fa-download", style="font-size: 18px; margin-right: 10px;"),
+                                "Descargar CV",
+                                href="https://drive.google.com/file/d/1PA1w04EWNXn1GJahCaWf13pZPhgdlNwj/view?usp=drive_link", 
+                                download="CV_JoseJuanGallegosSuarez.pdf", 
+                                _class="download-cv-btn",
+                                style="display: inline-block; margin-top: 15px; padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; text-decoration: none; transition: all 0.3s ease;"
+                            ),
                             style="flex: 1; text-align: justify;"
                         ),
                         style="display: flex; align-items: center;"
@@ -304,35 +312,54 @@ def get():
                     _class="terminal",
                     style="border-radius: 15px; overflow: hidden; padding: 20px; margin-bottom: 60px;"
                 ),
-                Div(
+                      Div(
+                    H2("Comunícate conmigo", _class="section", style="text-align: center; margin-bottom: 20px;"),
                     Div(
-                        I(_class="fas fa-envelope", style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #00ff00;"),
-                        Input(
-                            type="text",
-                            value="ing.josejuangallegos@gmail.com",
-                            readonly=True,
-                            style="background-color: #001100; color: #00ff00; border: 1px solid #00ff00; padding: 10px 10px 10px 35px; border-radius: 5px; width: 300px; box-sizing: border-box;"
+                        Div(
+                            I(_class="fas fa-envelope", style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #00ff00;"),
+                            Input(
+                                type="text",
+                                value="ing.josejuangallegos@gmail.com",
+                                readonly=True,
+                                style="background-color: #001100; color: #00ff00; border: 1px solid #00ff00; padding: 10px 10px 10px 35px; border-radius: 5px; width: 300px; box-sizing: border-box;"
+                            ),
+                            style="position: relative; display: inline-block; margin-right: 10px;"
                         ),
-                        style="position: relative; display: inline-block; margin-right: 10px;"
+                        Button(
+                            I(_class="fas fa-envelope", style="font-size: 18px;"),
+                            onclick="sendEmail()",
+                            style="margin-right: 10px; padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
+                        ),
+                        Button(
+                            I(_class="fas fa-copy", style="font-size: 18px;"),
+                            onclick="copyEmail()",
+                            style="margin-right: 10px; padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
+                        ),
+                        
+                        style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"
                     ),
-                    Button(
-                        I(_class="fas fa-envelope", style="font-size: 18px;"),
-                        onclick="sendEmail()",
-                        style="margin-right: 10px; padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
+                    Div(
+                        A(
+                            I(_class="fab fa-github", style="font-size: 24px;"),
+                            href="https://github.com/Giuseppe-Giovanni-Ingegnere-Sistemi",
+                            target="_blank",
+                            style="margin: 0 10px; color: #00ff00; text-decoration: none;"
+                        ),
+                        A(
+                            I(_class="fab fa-whatsapp", style="font-size: 24px;"),
+                            href="https://wa.me/qr/U7C3KCW53O3XB1",
+                            target="_blank",
+                            style="margin: 0 10px; color: #00ff00; text-decoration: none;"
+                        ),
+                        A(
+                            I(_class="fab fa-linkedin", style="font-size: 24px;"),
+                            href="https://www.linkedin.com/in/jose-juan-gallegos-su%C3%A1rez-89148b293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                            target="_blank",
+                            style="margin: 0 10px; color: #00ff00; text-decoration: none;"
+                        ),
+                        style="display: flex; justify-content: center; align-items: center;"
                     ),
-                    Button(
-                        I(_class="fas fa-copy", style="font-size: 18px;"),
-                        onclick="copyEmail()",
-                        style="margin-right: 10px; padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;"
-                    ),
-                    A(
-                        I(_class="fas fa-download", style="font-size: 18px;"),
-                        href="https://drive.google.com/file/d/1PA1w04EWNXn1GJahCaWf13pZPhgdlNwj/view?usp=drive_link", 
-                        download="CV_JoseJuanGallegosSuarez.pdf", 
-                        _class="download-cv-btn",
-                        style="padding: 10px 15px; background-color: #003300; color: #00ff00; border: 1px solid #00ff00; border-radius: 5px; text-decoration: none; transition: all 0.3s ease;"
-                    ),
-                    style="display: flex; align-items: center; justify-content: center; margin: 60px 0;",
+                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 60px 0;",
                     _class="terminal",
                 ),
                 Div(
@@ -410,22 +437,7 @@ def get():
                     _class="projects terminal",
                     style="border-radius: 15px; overflow: hidden; padding: 20px; margin-bottom: 60px;"
                 ),
-                Div(
-                    H2("Contact", _class="section"),
-                    Div(
-                        A(Img(src="img/link.svg", alt="LinkedIn", _class="social-icon", width="40", height="40"), 
-                          href="https://www.linkedin.com/in/jose-juan-gallegos-su%C3%A1rez-89148b293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", target="_blank"),
-                        A(Img(src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMDBmZjAwIiBkPSJNMTIuMDAxIDJjLTUuNTI1IDAtMTAgNC40NzUtMTAgMTBhOS45OSA5Ljk5IDAgMCAwIDYuODM3IDkuNDg4Yy41LjA4Ny42ODgtLjIxMy42ODgtLjQ3NmMwLS4yMzctLjAxMy0xLjAyNC0uMDEzLTEuODYyYy0yLjUxMi40NjMtMy4xNjItLjYxMi0zLjM2Mi0xLjE3NWMtLjExMy0uMjg4LS42LTEuMTc1LTEuMDI1LTEuNDEzYy0uMzUtLjE4Ny0uODUtLjY1LS4wMTMtLjY2MmMuNzg4LS4wMTMgMS4zNS43MjUgMS41MzggMS4wMjVjLjkgMS41MTIgMi4zMzcgMS4wODcgMi45MTIuODI1Yy4wODgtLjY1LjM1LTEuMDg3LjYzOC0xLjMzN2MtMi4yMjUtLjI1LTQuNTUtMS4xMTMtNC41NS00LjkzOGMwLTEuMDg4LjM4Ny0xLjk4NyAxLjAyNS0yLjY4N2MtLjEtLjI1LS40NS0xLjI3NS4xLTIuNjVjMCAwIC44MzctLjI2MyAyLjc1IDEuMDI0YTkuMyA5LjMgMCAwIDEgMi41LS4zMzdjLjg1IDAgMS43LjExMiAyLjUuMzM3YzEuOTEzLTEuMyAyLjc1LTEuMDI0IDIuNzUtMS4wMjRjLjU1IDEuMzc1LjIgMi40LjEgMi42NWMuNjM3LjcgMS4wMjUgMS41ODcgMS4wMjUgMi42ODdjMCAzLjgzOC0yLjMzNyA0LjY4OC00LjU2MiA0LjkzOGMuMzYyLjMxMi42NzUuOTEyLjY3NSAxLjg1YzAgMS4zMzctLjAxMyAyLjQxMi0uMDEzIDIuNzVjMCAuMjYyLjE4OC41NzQuNjg4LjQ3NEExMC4wMiAxMC4wMiAwIDAgMCAyMiAxMmMwLTUuNTI1LTQuNDc1LTEwLTEwLTEwIi8+PC9zdmc+", alt="GitHub", _class="social-icon"), 
-                          href="https://github.com/Giuseppe-Giovanni-Ingegnere-Sistemi", target="_blank"),
-                        A(Img(src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMDBmZjAwIiBkPSJNMTkuMDUgNC45MUE5LjgyIDkuODIgMCAwIDAgMTIuMDQgMmMtNS40NiAwLTkuOTEgNC40NS05LjkxIDkuOTFjMCAxLjc1LjQ2IDMuNDUgMS4zMiA0Ljk1TDIuMDUgMjJsNS4yNS0xLjM4YzEuNDUuNzkgMy4wOCAxLjIxIDQuNzQgMS4yMWM1LjQ2IDAgOS45MS00LjQ1IDkuOTEtOS45MWMwLTIuNjUtMS4wMy01LjE0LTIuOS03LjAxbS03LjAxIDE1LjI0Yy0xLjQ4IDAtMi45My0uNC00LjItMS4xNWwtLjMtLjE4bC0zLjEyLjgybC44My0zLjA0bC0uMi0uMzFhOC4yNiA4LjI2IDAgMCAxLTEuMjYtNC4zOGMwLTQuNTQgMy43LTguMjQgOC4yNC04LjI0YzIuMiAwIDQuMjcuODYgNS44MiAyLjQyYTguMTggOC4xOCAwIDAgMSAyLjQxIDUuODNjLjAyIDQuNTQtMy42OCA4LjIzLTguMjIgOC4yM200LjUyLTYuMTZjLS4yNS0uMTItMS40Ny0uNzItMS42OS0uODFjLS4yMy0uMDgtLjM5LS4xMi0uNTYuMTJjLS4xNy4yNS0uNjQuODEtLjc4Ljk3Yy0uMTQuMTctLjI5LjE5LS41NC4wNmMtLjI1LS4xMi0xLjA1LS4zOS0xLjk5LTEuMjNjLS43NC0uNjYtMS4yMy0xLjQ3LTEuMzgtMS43MmMtLjE0LS4yNS0uMDItLjM4LjExLS41MWMuMTEtLjExLjI1LS4yOS4zNy0uNDNzLjE3LS4yNS4yNS0uNDFjLjA4LS4xNy4wNC0uMzEtLjAyLS40M3MtLjU2LTEuMzQtLjc2LTEuODRjLS4yLS40OC0uNDEtLjQyLS41Ni0uNDNoLS40OGMtLjE3IDAtLjQzLjA2LS42Ni4zMWMtLjIyLjI1LS44Ni44NS0uODYgMi4wN3MuODkgMi40IDEuMDEgMi41NmMuMTIuMTcgMS43NSAyLjY3IDQuMjMgMy43NGMuNTkuMjYgMS4wNS40MSAxLjQxLjUyYy41OS4xOSAxLjEzLjE2IDEuNTYuMWMuNDgtLjA3IDEuNDctLjYgMS42Ny0xLjE4Yy4yMS0uNTguMjEtMS4wNy4xNC0xLjE4cy0uMjItLjE2LS40Ny0uMjgiLz48L3N2Zz4=", alt="Email", _class="social-icon"), 
-                          href="https://wa.me/qr/U7C3KCW53O3XB1"),
-                        A(Img(src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMDBmZjAwIiBkPSJNMjAgMThoLTJWOS4yNUwxMiAxM0w2IDkuMjVWMThINFY2aDEuMmw2LjggNC4yNUwxOC44IDZIMjBtMC0ySDRjLTEuMTEgMC0yIC44OS0yIDJ2MTJhMiAyIDAgMCAwIDIgMmgxNmEyIDIgMCAwIDAgMi0yVjZhMiAyIDAgMCAwLTItMiIvPjwvc3ZnPg==", alt="Email", _class="social-icon"), 
-                          href="mailto:ing.josejuangallegos@gmail.com"),
-                        _class="social-icons"
-                    ),
-                    _class="contact terminal",
-                    style="border-radius: 15px; overflow: hidden; padding: 20px; margin-bottom: 60px;"
-                ),
+                
                 _class="container"
             )
         )
