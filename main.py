@@ -295,8 +295,8 @@ def get():
                                                 Div(
                             H3('José Juan Gallegos Suarez', _class="header glitch"),
                             P("Desarrollador Full-Stack", style="margin-top: 0; font-style: italic;"),
-                            P("Ingeniero en Sistemas Computacionales con pasión por la tecnología y la innovación."),
-                            P("Especializado en desarrollo de software, mantenimiento de equipos, y soluciones tecnológicas."),
+                            P(""),
+                            P(""),
                             A(
                                 I(_class="fas fa-download", style="font-size: 18px; margin-right: 10px;"),
                                 "Descargar CV",
